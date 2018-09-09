@@ -19,5 +19,24 @@ public class QuickSort {
         toSort.set(newNumber, temp);
     }
 
+    private void quickSort(int leftIndex, int rightIndex) {
+
+        int left = leftIndex;
+        int riht = rightIndex;
+        int pivot = toSort.get(leftIndex + (rightIndex - leftIndex) / 2);
+        while (left <= riht) {
+            while (toSort.get(left) < pivot) {
+                left++;
+            }
+            while (toSort.get(riht) > pivot) {
+                riht--;
+            }
+            if (left <= riht) {
+                changeNumbers(left, riht);
+                left++;
+                riht--;
+            }
+        }
+
 }
 
