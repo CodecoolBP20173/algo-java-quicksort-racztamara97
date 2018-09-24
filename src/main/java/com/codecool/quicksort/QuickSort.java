@@ -7,6 +7,7 @@ public class QuickSort {
 
     /**
      * Sorts the given List in place
+     *
      * @param toSort the List to sort. Throws an error if its null
      */
 
@@ -40,26 +41,26 @@ public class QuickSort {
                 right--;
             }
         }
-        if (leftIndex < right){
-        quickSort(leftIndex, right);
+        if (leftIndex < right) {
+            quickSort(leftIndex, right);
         }
-        if (left < rightIndex){
+        if (left < rightIndex) {
             quickSort(left, rightIndex);
         }
     }
-        public void sort(List<Integer> toSort) {
 
-            if (toSort == null) {
-                throw new IllegalArgumentException();
-            }
-            else if (toSort.size() == 0) {
-                return;
-            }
+    public void sort(List<Integer> toSort) {
 
-            this.toSort = toSort;
-            length = toSort.size();
-            quickSort(0, length - 1);
+        if (toSort == null) {
+            throw new IllegalArgumentException();
+        } else if (toSort.size() == 0) {
+            return;
         }
+
+        this.toSort = toSort;
+        length = toSort.size();
+        quickSort(0, length - 1);
+    }
 
 
 }
